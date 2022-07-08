@@ -2,7 +2,7 @@
 
 ###### A tribute to [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/)
 
-[Donut Maker Requirements](https://wecancodeit-materials.netlify.app/exercises/mastery/cookie-click-counter-calamity/)
+[Donut Maker Requirements] https://docs.google.com/document/d/e/2PACX-1vS7MVfsTSzC1SPKNrbFKzPAG81teJdIjl_m3Auw86AtFQ_xjvqBt7EqCPfzj01afDpWygBMj7ITbeoa/pub
 
 ## To Run This Application
 
