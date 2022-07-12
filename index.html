@@ -1,74 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Donut Clicker</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Company info
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <button class="dropdown-item" type="button">About Us</button>
-              <button class="dropdown-item" type="button">Our Products</button>
-              <a class="dropdown-item" href="#">Contact Us</a>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Donut Clicker</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col"></div>
+      <img src="/gfx/donutBlue.png" alt="cartoon vector of blue frosted donut" id="left-donut" class="header-donuts">
+      <nav class="btn-group" role="group">
+        <div class="dropdown col">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Company info
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button">About Us</button>
+            <button class="dropdown-item" type="button">Our Products</button>
+            <a class="dropdown-item" href="#">Contact Us</a>
           </div>
-
-          <a class="btn btn-primary" href="https://orteil.dashnet.org/cookieclicker/" role="button">Inspiration</a>
-
-          <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Developer info
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <button class="dropdown-item" type="button">Bio</button>
-              <a class="dropdown-item" href="https://AlexKStein.github.io">Portfolio</a>
-              <a class="dropdown-item" href="https://linkedin.com/in/alexkstein">LinkedIn (Hire me!)</a>
-            </div>
-          </div>
-
         </div>
-      </header>
+          <div class="dropdown col">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Inspiration
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a class="dropdown-item" href="https://orteil.dashnet.org/cookieclicker/" type="button">Cookie Clicker</a>
+            <a class="dropdown-item" href="https://www.gamehive.com/games/tap-titans-2">Tap Titans 2</a>
+          </div>
+        </div>
+        <div class="dropdown col">
+          <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Developer info
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button">Bio</button>
+            <a class="dropdown-item" href="https://AlexKStein.github.io">Portfolio</a>
+            <a class="dropdown-item" href="https://linkedin.com/in/alexkstein">LinkedIn (Hire me!)</a>
+          </div>
+        </div>
+      </nav>
+      <img src="/gfx/donutGreen.png" alt="cartoon vector of green frosted donut" class="header-donuts" id="right-donut">
+      <div class="col"></div>
+    </header>
+    <hr>
+
+    <main>
+      <section id="game-window" class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <p id="counter" class=>Total Donuts:</p>
+          </div>
+          <div class="col"></div>
+          <div class="col text-center">
+            <p>Click to Make Donuts!</p>
+          </div>
+          <div class="col"></div>
+          <div class="col">
+            <button id="reset-game" type="button" class="btn btn-danger"> Reset </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <input id="donut-maker" type="image" src="/gfx/donutStart.png" class="img-fluid col-3"
+            alt="Simple Chocolate Donut - click to make Donuts!" id="donut" class="col-3">
+
+          </input>
+          <div class="col"></div>
+        </div>
+      </section>
       <hr>
+      <section id="upgrades">
 
-      <main>
-        <p id="counter">Total Donuts:</p>
-        <button id="donut-maker" type="button" class="btn btn-light">Click me to Make Donuts!</button>
-        <hr>
-        <section id="clicks">
-          <p id="click-rate">You make 1 donuts per click.</p>
-          <button id="buy-clicks" type="button" class="btn btn-outline-dark" disabled>Increase Donut-making skills: 10 Donuts</button>
-        </section>
-        <hr>
-        <section id="autos">
-          <p id="auto-count">You automatically make 0 donuts per second.</p>
-          <button id="buy-autos" type="button" class="btn btn-outline-dark" disabled>Buy Auto-donuts: 100 Donuts</button>
-        </section>
-        <br>
-        <section id="reset">
-          <button id="reset-game" type="button" class="btn btn-outline-danger">Reset</button>
-        </section>
+        <ul class="nav nav-tabs nav-fill">
+          <li class="nav-item"><a class="nav-link active" href="#clicks" data-toggle="tab">Click Upgrades!</a></li>
+          <li class="nav-item"><a class="nav-link" href="#autos" data-toggle="tab">Auto Donuts!</a></li>
+          <li class="nav-item"><a class="nav-link" href="#multiply" data-toggle="tab">Multipliers!</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cosmetic" data-toggle="tab">Cosmetic Upgrades!</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="clicks">
+            <section id="clicks">
+              <br>
+              <p id="click-rate">You make 1 donuts per click.</p>
+              <button id="buy-clicks" type="button" class="btn btn-outline-dark" disabled>
+                Increase Donut-making skills: 10 Donuts
+              </button>
+            </section>
+          </div>
+          <div class="tab-pane" id="autos">
+            <section id="autos">
+              <br>
+              <p id="auto-count">You automatically make 0 donuts per second.</p>
+              <button id="buy-autos" type="button" class="btn btn-outline-dark" disabled>
+                Buy Auto-donuts: 50 Donuts
+              </button>
+            </section>
+          </div>
+          <div class="tab-pane" id="multiply">
+            <section id="multiplier">
+              <br>
+              <p id="multiplier-count">You make 1x as many donuts.</p>
+              <button id="buy-multiplier" type="button" class="btn btn-outline-dark" disabled>
+                Buy a multiplier: 500 Donuts
+              </button>
+            </section>
+          </div>
+          <div class="tab-pane" id="cosmetic"><br>
+            Coming Soon!
+          </div>
+        </div>
+      </section>
+
+      <br>
+      <section id="reset">
+
+      </section>
 
 
-      </main>
+    </main>
 
 
 
-    </div>
-    <script src="./app.js" type="module"></script>
-    <!-- Bootstrap JS  -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  </div>
+  <script src="./app.js" type="module"></script>
+  <!-- Bootstrap JS  -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

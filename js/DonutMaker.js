@@ -4,8 +4,9 @@ class DonutMaker{
         this.clickers = 1;
         this.clickMultiplier=1;
         this.autoClicks=0;
-        this.autoClickCost =100;
-        this.multiplierCost = 10;
+        this.autoClickCost =50;
+        this.multiplierCost = 500;
+        this.clickCost = 10;
     }
    
     get clickRate(){
@@ -26,9 +27,19 @@ class DonutMaker{
     get autoCost(){
         return this.autoClickCost;
     }
+    get upgradeClickCost(){
+        return this.clickCost
+    }
 
     addDonut(){
         this.donutCount+= this.clickers*this.clickMultiplier;
+    }
+    addClicks(){
+        if(this.donutCount>=this.clickCost){
+            this.clickers++;
+            this.donutCount -=this.clickCost;
+            this.clickCost*=1.5;
+        }
     }
     addAutoClicks(){
         if (this.donutCount>=this.autoClickCost){
@@ -42,9 +53,9 @@ class DonutMaker{
     }
     addClickMultiplier(){
         if(this.donutCount>=this.multiplierCost){ 
-            this.clickMultiplier*=1.2;
+            this.clickMultiplier+=1;
             this.donutCount -= this.multiplierCost;
-            this.multiplierCost *= 1.1;
+            this.multiplierCost *= 2;
         } 
     }
 }
