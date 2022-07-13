@@ -11,3 +11,72 @@
 .container{
     margin-top: 5px;
 }
+#click-tab{
+    background-color: cyan;
+    color: black;
+}
+#click-tab:hover{
+    box-shadow: 0 0 10px cyan;
+}
+#clicks{
+    background-color: rgb(175, 252, 252);
+    border: 2px;
+    border-color: cyan;
+    border-style: solid;
+    border-radius: 0 0 10px 10px;
+}
+#auto-tab{
+    background-color: magenta;
+    color: black;
+}
+#auto-tab:hover{
+    box-shadow: 0 0 10px magenta;
+}
+#autos{
+    background-color: rgb(255, 155, 255);
+    border: 2px;
+    border-color: magenta;
+    border-style: solid;
+    border-radius: 0 0 10px 10px;
+}
+#multiply-tab{
+    background-color: yellow;
+    color: black;
+}
+#multiply-tab:hover{
+    box-shadow: 0 0 10px yellow;
+}
+#multiply{
+    background-color: rgb(255, 255, 158);
+    border: 2px;
+    border-color: yellow;
+    border-style: solid;
+    border-radius: 0 0 10px 10px;
+}
+#cosmetic-tab{
+    background-color: black;
+    color: white;
+}
+#cosmetic-tab:hover{
+    box-shadow: 0 0 10px black;
+}
+#cosmetic{
+    background-color: gray;
+    color: white;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0 0 10px 10px;
+}
+#click-rate{
+    font-size: larger;
+}
+#auto-count{
+    font-size: larger;
+}
+#multiplier-count{
+    font-size: larger;
+}
+.cosmeticText{
+    font-size: larger;
+}

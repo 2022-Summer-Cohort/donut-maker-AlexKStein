@@ -31,9 +31,9 @@ function donutCounter(){
     }
 }
 function updateStats(){
-    clickRateEl.innerText = "You make " + Math.round(donutMaker.clickers*donutMaker.multiplier) + " donuts per click.";
-    autoRateEl.innerText = "You automatically make " + Math.round(donutMaker.autoClickers*donutMaker.multiplier) + " donuts per second.";
-    mutliplierEl.innerText = "You make "+ donutMaker.multiplier +"x as many donuts."
+    clickRateEl.innerText = "Donuts per Click: " + Math.round(donutMaker.clickers*donutMaker.multiplier);
+    autoRateEl.innerText = "Donuts per Second: "+ Math.round(donutMaker.autoClickers*donutMaker.multiplier);
+    mutliplierEl.innerText = "Donut Multiplier: "+ donutMaker.multiplier +"x"
 
 }
 function autos(){

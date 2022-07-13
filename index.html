@@ -29,8 +29,8 @@
             <a class="dropdown-item" href="#">Contact Us</a>
           </div>
         </div>
-          <div class="dropdown col">
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        <div class="dropdown col">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Inspiration
           </button>
@@ -59,14 +59,15 @@
     <main>
       <section id="game-window" class="container-fluid">
         <div class="row">
-          <div class="col">
-            <p id="counter" class=>Total Donuts:</p>
+          <div class="col-3">
+            <h4 id="counter" class=>Total Donuts:</h4>
           </div>
           <div class="col"></div>
           <div class="col text-center">
-            <p>Click to Make Donuts!</p>
+            <p>Click to Make Donuts!
+            <p>
           </div>
-          <div class="col"></div>
+          <div class="col-3"></div>
           <div class="col">
             <button id="reset-game" type="button" class="btn btn-danger"> Reset </button>
           </div>
@@ -80,46 +81,60 @@
           <div class="col"></div>
         </div>
       </section>
-      <hr>
+      <br>
+
       <section id="upgrades">
-
         <ul class="nav nav-tabs nav-fill">
-          <li class="nav-item"><a class="nav-link active" href="#clicks" data-toggle="tab">Click Upgrades!</a></li>
-          <li class="nav-item"><a class="nav-link" href="#autos" data-toggle="tab">Auto Donuts!</a></li>
-          <li class="nav-item"><a class="nav-link" href="#multiply" data-toggle="tab">Multipliers!</a></li>
-          <li class="nav-item"><a class="nav-link" href="#cosmetic" data-toggle="tab">Cosmetic Upgrades!</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#clicks" data-toggle="tab" id="click-tab">Click
+              Upgrades!</a></li>
+          <li class="nav-item"><a class="nav-link" href="#autos" data-toggle="tab" id="auto-tab">Auto Donuts!</a></li>
+          <li class="nav-item"><a class="nav-link" href="#multiply" data-toggle="tab" id="multiply-tab">Multipliers!</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#cosmetic" data-toggle="tab" id="cosmetic-tab">Cosmetic
+              Upgrades!</a></li>
         </ul>
-
         <div class="tab-content">
-          <div class="tab-pane active" id="clicks">
-            <section id="clicks">
-              <br>
-              <p id="click-rate">You make 1 donuts per click.</p>
-              <button id="buy-clicks" type="button" class="btn btn-outline-dark" disabled>
+          <div class="tab-pane active py-5" id="clicks">
+            <div class="row">
+              <div class="col"></div>
+              <p id="click-rate" class="col p-2 rounded my-auto text-center">Donuts per click: 1</p>
+              <div class="col-1"></div>
+              <button id="buy-clicks" type="button" class="btn btn-outline-dark " disabled>
                 Increase Donut-making skills: 10 Donuts
               </button>
-            </section>
+              <div class="col"></div>
+            </div>
           </div>
-          <div class="tab-pane" id="autos">
-            <section id="autos">
-              <br>
-              <p id="auto-count">You automatically make 0 donuts per second.</p>
+          <div class="tab-pane py-5" id="autos">
+            <div class="row">
+              <div class="col"></div>
+              <p id="auto-count" class="col p-2 rounded my-auto text-center">Donuts per Second: 0</p>
+              <div class="col-1"></div>
               <button id="buy-autos" type="button" class="btn btn-outline-dark" disabled>
                 Buy Auto-donuts: 50 Donuts
               </button>
-            </section>
+              <div class="col"></div>
+            </div>
           </div>
-          <div class="tab-pane" id="multiply">
-            <section id="multiplier">
-              <br>
-              <p id="multiplier-count">You make 1x as many donuts.</p>
+          <div class="tab-pane py-5" id="multiply">
+            <div class="row">
+              <div class="col"></div>
+              <p id="multiplier-count" class="col p-2 rounded my-auto text-center">Donut Multiplier: 1x</p>
+              <div class="col-1"></div>
               <button id="buy-multiplier" type="button" class="btn btn-outline-dark" disabled>
                 Buy a multiplier: 500 Donuts
               </button>
-            </section>
+              <div class="col"></div>
+
+            </div>
           </div>
-          <div class="tab-pane" id="cosmetic"><br>
-            Coming Soon!
+          <div class="tab-pane py-5" id="cosmetic">
+            <div class="row">
+              <div class="col"></div>
+            <p class="cosmeticText col">Coming Soon!</p>
+            <div class="col"></div>
+
+            </div>
           </div>
         </div>
       </section>
