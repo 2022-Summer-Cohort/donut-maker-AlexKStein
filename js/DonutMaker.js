@@ -30,7 +30,7 @@ class DonutMaker{
     get upgradeClickCost(){
         return this.clickCost
     }
-
+    
     addDonut(){
         this.donutCount+= this.clickers*this.clickMultiplier;
     }
@@ -58,6 +58,17 @@ class DonutMaker{
             this.multiplierCost *= 2;
         } 
     }
+    frodonut=new Boolean(false);
+    spaceBG=new Boolean(false);
+    unlockFrodonut(){
+        this.donutCount -=10;
+        this.frodonut=true;
+    }
+    unlockSpaceBG(){
+        this.donutCount -=100;
+        this.spaceBG=true;
+    }
+
 }
 
 export default DonutMaker;

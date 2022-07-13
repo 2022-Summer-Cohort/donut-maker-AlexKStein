@@ -80,3 +80,11 @@
 .cosmeticText{
     font-size: larger;
 }
+
+#game-window{
+    background-color: rgba(255, 255, 255, 0.6);
+    background-image: url(/gfx/donutBG.png);
+    background-size: 15vw;
+    background-position: center;
+    background-blend-mode: lighten;
+}

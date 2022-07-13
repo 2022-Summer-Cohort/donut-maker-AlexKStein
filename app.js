@@ -12,6 +12,14 @@ const resetBtn = document.querySelector("#reset-game");
 const mutliplierEl = document.querySelector("#multiplier-count");
 const multiplyBtn = document.querySelector("#buy-multiplier");
 
+const theDonutEl = document.querySelector("#donut-maker");
+const donut1Cost = 10;
+const frodoBtn = document.querySelector("#frodonut");
+const backgroundEl = document.querySelector("#game-window");
+const bg1Cost = 100;
+const spaceBtn = document.querySelector("#space-btn");
+
+
 function donutCounter(){
     counterEl.innerText = "Total Donuts: " + Math.round(donutMaker.totalDonuts);
     if(donutMaker.totalDonuts>=donutMaker.upgradeClickCost){
@@ -28,6 +36,16 @@ function donutCounter(){
         multiplyBtn.disabled=false;
     } else{
         multiplyBtn.disabled=true;
+    }
+    if(donutMaker.totalDonuts >= donut1Cost && donutMaker.frodonut == false){
+        frodoBtn.disabled=false;
+    } else if (donutMaker.frodonut == false){
+        frodoBtn.disabled=true;
+    }
+    if(donutMaker.totalDonuts >= bg1Cost && donutMaker.spaceBG == false){
+        spaceBtn.disabled=false;
+    } else if (donutMaker.spaceBG == false){
+        spaceBtn.disabled=true;
     }
 }
 function updateStats(){
@@ -70,4 +88,22 @@ multiplyBtn.addEventListener("click", ()=>{
 resetBtn.addEventListener("click", ()=>{
     location.reload();
 })
-
+//Cosmetics
+frodoBtn.addEventListener("click", ()=> {
+    if(donutMaker.frodonut == false){
+        donutMaker.unlockFrodonut();
+    frodoBtn.innerText="Equip the Frodonut";
+    frodoBtn.disabled=false;
+    } else{
+        theDonutEl.src="/gfx/Frodonut.png";
+    }
+})
+spaceBtn.addEventListener("click", ()=> {
+    if(donutMaker.spaceBG == false){
+        donutMaker.unlockSpaceBG();
+    spaceBtn.innerText="Make Donuts in Space!";
+    spaceBtn.disabled=false;
+    } else{
+        backgroundEl.style.background="url('/gfx/spaceBG.png')";
+    }
+})

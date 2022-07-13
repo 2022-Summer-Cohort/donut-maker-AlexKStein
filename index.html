@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Donut Clicker</title>
+  <title>Goodest Boy Donut Shoppe</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -55,49 +55,55 @@
       <div class="col"></div>
     </header>
     <hr>
+    <p class="text-center lead"> Welcome to the Goodest Boy Donut Shoppe! Click the Donut to start making donuts!</p>
+    <hr>
 
     <main>
-      <section id="game-window" class="container-fluid">
+      <section id="game-window" class="container-fluid py-5">
         <div class="row">
-          <div class="col-3">
-            <h4 id="counter" class=>Total Donuts:</h4>
-          </div>
+          <div class="col-1"></div>
+          <h4 id="counter" class="col-3 bg-light text-center rounded">Total Donuts:</h4>
           <div class="col"></div>
-          <div class="col text-center">
-            <p>Click to Make Donuts!
-            <p>
-          </div>
-          <div class="col-3"></div>
-          <div class="col">
-            <button id="reset-game" type="button" class="btn btn-danger"> Reset </button>
-          </div>
-        </div>
+            <button id="reset-game" type="button" class="btn btn-danger col-2"><b> Reset </b> </button>
+          <div class="col-1"></div>
         <div class="row">
           <div class="col"></div>
           <input id="donut-maker" type="image" src="/gfx/donutStart.png" class="img-fluid col-3"
             alt="Simple Chocolate Donut - click to make Donuts!" id="donut" class="col-3">
-
           </input>
           <div class="col"></div>
         </div>
       </section>
       <br>
+    </div>
 
       <section id="upgrades">
         <ul class="nav nav-tabs nav-fill">
-          <li class="nav-item"><a class="nav-link active" href="#clicks" data-toggle="tab" id="click-tab">Click
-              Upgrades!</a></li>
-          <li class="nav-item"><a class="nav-link" href="#autos" data-toggle="tab" id="auto-tab">Auto Donuts!</a></li>
-          <li class="nav-item"><a class="nav-link" href="#multiply" data-toggle="tab" id="multiply-tab">Multipliers!</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="#clicks" data-toggle="tab" id="click-tab">
+              Click Upgrades!</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#autos" data-toggle="tab" id="auto-tab">
+              Auto Donuts!</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#cosmetic" data-toggle="tab" id="cosmetic-tab">Cosmetic
-              Upgrades!</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#multiply" data-toggle="tab" id="multiply-tab">
+              Multipliers!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cosmetic" data-toggle="tab" id="cosmetic-tab">
+              Cosmetic Upgrades!</a>
+            </li>
         </ul>
+
         <div class="tab-content">
           <div class="tab-pane active py-5" id="clicks">
             <div class="row">
               <div class="col"></div>
-              <p id="click-rate" class="col p-2 rounded my-auto text-center">Donuts per click: 1</p>
+              <p id="click-rate" class="col p-2 rounded my-auto text-center">
+                Donuts per click: 1
+              </p>
               <div class="col-1"></div>
               <button id="buy-clicks" type="button" class="btn btn-outline-dark " disabled>
                 Increase Donut-making skills: 10 Donuts
@@ -108,7 +114,9 @@
           <div class="tab-pane py-5" id="autos">
             <div class="row">
               <div class="col"></div>
-              <p id="auto-count" class="col p-2 rounded my-auto text-center">Donuts per Second: 0</p>
+              <p id="auto-count" class="col p-2 rounded my-auto text-center">
+                Donuts per Second: 0
+              </p>
               <div class="col-1"></div>
               <button id="buy-autos" type="button" class="btn btn-outline-dark" disabled>
                 Buy Auto-donuts: 50 Donuts
@@ -119,7 +127,9 @@
           <div class="tab-pane py-5" id="multiply">
             <div class="row">
               <div class="col"></div>
-              <p id="multiplier-count" class="col p-2 rounded my-auto text-center">Donut Multiplier: 1x</p>
+              <p id="multiplier-count" class="col p-2 rounded my-auto text-center">
+                Donut Multiplier: 1x
+              </p>
               <div class="col-1"></div>
               <button id="buy-multiplier" type="button" class="btn btn-outline-dark" disabled>
                 Buy a multiplier: 500 Donuts
@@ -131,25 +141,35 @@
           <div class="tab-pane py-5" id="cosmetic">
             <div class="row">
               <div class="col"></div>
-            <p class="cosmeticText col">Coming Soon!</p>
+              <p id="donut1-text" class="col p-2 rounded my-auto text-center cosmeticText">
+                The Frodonut
+              </p>
+              <div class="col-1"></div>
+              <button id="frodonut" type="button" class="btn btn-dark" disabled>
+                Purchase Frodonut: 10 donuts
+              </button>
+            <div class="col"></div>
+            </div>
+
+            <div class="row">
+              <div class="col"></div>
+              <p id="bg1-text" class="col p-2 rounded my-auto text-center cosmeticText">
+                Space!
+              </p>
+              <div class="col-1"></div>
+              <button id="space-btn" type="button" class="btn btn-dark" disabled>
+                Purchase Space Background: 100 Donuts
+              </button>
             <div class="col"></div>
 
             </div>
           </div>
         </div>
       </section>
-
-      <br>
-      <section id="reset">
-
-      </section>
-
-
     </main>
 
 
 
-  </div>
   <script src="./app.js" type="module"></script>
   <!-- Bootstrap JS  -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
