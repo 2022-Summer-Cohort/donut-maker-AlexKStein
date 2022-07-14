@@ -18,6 +18,9 @@ class DonutMaker{
     get totalDonuts() {
         return this.donutCount;
     }
+    set setDonuts(x){
+        this.donutCount = x;
+    }
     get autoClickers(){
         return this.autoClicks;
     }
@@ -59,13 +62,53 @@ class DonutMaker{
         } 
     }
     frodonut=new Boolean(false);
-    spaceBG=new Boolean(false);
+    greenDonut=new Boolean(false);
+    blueDonut=new Boolean(false);
+    redDonut=new Boolean(false);
+    cosmicDonut=new Boolean(false);
     unlockFrodonut(){
         this.donutCount -=10;
         this.frodonut=true;
     }
+    unlockGreenDonut(){
+        this.donutCount -=500;
+        this.greenDonut=true;
+    }
+    unlockBlueDonut(){
+        this.donutCount -=2500;
+        this.blueDonut=true;
+    }
+    unlockRedDonut(){
+        this.donutCount -=10000;
+        this.redDonut=true;
+    }
+    unlockCosmicDonut(){
+        this.donutCount -=100000;
+        this.cosmicDonut=true;
+    }
+    shopBG=new Boolean(false);
+    rainbowBG=new Boolean(false);
+    forestBG=new Boolean(false);
+    beachBG=new Boolean(false);
+    spaceBG=new Boolean(false);
+    unlockRainbowBG(){
+        this.donutCount-=25;
+        this.rainbowBG=true;
+    }
+    unlockShopBG(){
+        this.donutCount-=100;
+        this.shopBG=true;
+    }
+    unlockForestBG(){
+        this.donutCount-=1000;
+        this.forestBG=true;
+    }
+    unlockBeachBG(){
+        this.donutCount-=10000;
+        this.beachBG=true;
+    }
     unlockSpaceBG(){
-        this.donutCount -=100;
+        this.donutCount -=100000;
         this.spaceBG=true;
     }
 

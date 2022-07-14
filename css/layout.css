@@ -68,6 +68,22 @@
     border-style: solid;
     border-radius: 0 0 10px 10px;
 }
+#debug-tab{
+    background-image: linear-gradient(yellow, black, yellow);
+    color: white;
+}
+#debug-tab:hover{
+    box-shadow: 0 0 10px black;
+}
+#debug{
+    background-color: white;
+    color: darkgreen;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0 0 10px 10px;
+}
+
 #click-rate{
     font-size: larger;
 }
@@ -82,9 +98,7 @@
 }
 
 #game-window{
-    background-color: rgba(255, 255, 255, 0.6);
     background-image: url(/gfx/donutBG.png);
     background-size: 15vw;
     background-position: center;
-    background-blend-mode: lighten;
 }
