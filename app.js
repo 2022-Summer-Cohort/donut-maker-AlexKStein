@@ -27,7 +27,10 @@ const rainbowBtn = document.querySelector("#rainbow-btn");
 const forestBtn=document.querySelector("#forest-btn");
 const beachBtn=document.querySelector("#beach-btn");
 const spaceBtn = document.querySelector("#space-btn");
-
+let isFrodonutEquipped = new Boolean(false);
+let isSpaceEquipped = new Boolean(false);
+let isMuted=new Boolean(false);
+const muteBtn = document.querySelector("#mute-btn");
 
 
 function donutCounter(){
@@ -109,26 +112,77 @@ function autos(){
 }
 
 donutCounter();
-setInterval(autos, 1000)
+setInterval(autos, 1000);
 
+//sounds
+function clickSound(){
+    const normalClick = new Audio("/audio/clickNormal.wav");
+    const frodoClick = new Audio("/audio/clickDog.mp3");
+    const spaceClick1 = new Audio("/audio/clickSpace1.mp3");
+    const spaceClick2 = new Audio("/audio/clickSpace2.mp3");
+    if(isMuted==false){
+        if(isSpaceEquipped==true){
+            if(donutMaker.totalDonuts%2==0){
+                spaceClick1.play();
+            } else{
+                spaceClick2.play();
+            }
+        } else if(isFrodonutEquipped==true){
+            frodoClick.play();
+        } else{
+            normalClick.play();
+        }
+    }
+}
+function equipSound(){
+    const equip = new Audio("/audio/equip.wav");
+    if(isMuted==false){
+        equip.play();
+    }
+}
+function upgradeSound(){
+    const upgrade = new Audio("/audio/upgrade.wav");
+    if(isMuted==false){
+        upgrade.play();
+    }
+}
+function purchaseSound(){
+    const unlock = new Audio("/audio/purchase.wav");
+    if(isMuted==false){
+        unlock.play();
+    }
+}
+//buttons
+muteBtn.addEventListener("click", ()=>{
+    if(isMuted==false){
+        isMuted=true;
+        muteBtn.src="/gfx/muted.png";
+    }else{
+        isMuted=false;
+        muteBtn.src="/gfx/unmuted.png";
+    }
+})
 donutBtn.addEventListener("click", ()=>{
     donutMaker.addDonut();
-    // console.log(donutMaker);
+    clickSound();
     donutCounter();
 })
 upgradeBtn.addEventListener("click", ()=>{
+    upgradeSound();
     donutMaker.addClicks();
     updateStats();    
     upgradeBtn.innerText= "Increase Donut-making skills: " +  Math.round(donutMaker.upgradeClickCost) + " Donuts";
     donutCounter();
 })
 autoBtn.addEventListener("click", ()=>{
+    upgradeSound();
     donutMaker.addAutoClicks();
     updateStats();
     autoBtn.innerText= "Buy Auto-donuts: " +  Math.round(donutMaker.autoCost) + " Donuts";
     donutCounter();
 })
 multiplyBtn.addEventListener("click", ()=>{
+    upgradeSound();
     donutMaker.addClickMultiplier();
     updateStats();
     multiplyBtn.innerHTML="Buy a multiplier: " + donutMaker.mCost+ " Donuts";
@@ -139,54 +193,78 @@ resetBtn.addEventListener("click", ()=>{
 })
 //Cosmetics
 defaultDonutBtn.addEventListener("click", ()=>{
+    equipSound();
     theDonutEl.src="/gfx/donutStart.png";
+    isFrodonutEquipped = false;
+    isSpaceEquipped = false;
 })
 frodoBtn.addEventListener("click", ()=> {
     if(donutMaker.frodonut == false){
+        purchaseSound()
         donutMaker.unlockFrodonut();
         frodoBtn.innerText="Equip the Frodonut";
         frodoBtn.disabled=false;
     } else{
+        equipSound();
         theDonutEl.src="/gfx/Frodonut.png";
+        isFrodonutEquipped = true;
+        isSpaceEquipped = false;
     }
 })
 greenBtn.addEventListener("click", ()=> {
     if(donutMaker.greenDonut == false){
+        purchaseSound()
         donutMaker.unlockGreenDonut();
         greenBtn.innerText="Equip Green Donut";
         greenBtn.disabled=false;
     } else{
+        equipSound();
         theDonutEl.src="/gfx/donutGreen.png";
+        isFrodonutEquipped = false;
+        isSpaceEquipped = false;
     }
 })
 blueBtn.addEventListener("click", ()=> {
     if(donutMaker.blueDonut == false){
+        purchaseSound()
         donutMaker.unlockBlueDonut();
         blueBtn.innerText="Equip Blue Donut";
         blueBtn.disabled=false;
     } else{
+        equipSound();
         theDonutEl.src="/gfx/donutBlue.png";
+        isFrodonutEquipped = false;
+        isSpaceEquipped = false;
     }
 })
 redBtn.addEventListener("click", ()=> {
     if(donutMaker.redDonut == false){
+        purchaseSound()
         donutMaker.unlockRedDonut();
         redBtn.innerText="Equip Red Donut";
         redBtn.disabled=false;
     } else{
+        equipSound();
         theDonutEl.src="/gfx/donutRed.png";
+        isFrodonutEquipped = false;
+        isSpaceEquipped = false;
     }
 })
 cosmicBtn.addEventListener("click", ()=> {
     if(donutMaker.cosmicDonut == false){
+        purchaseSound()
         donutMaker.unlockCosmicDonut();
         cosmicBtn.innerText="Equip Cosmic Donut";
         cosmicBtn.disabled=false;
     } else{
+        equipSound();
         theDonutEl.src="/gfx/donutSpace.png";
+        isFrodonutEquipped = false;
+        isSpaceEquipped = true;
     }
 })
 donutBgBtn.addEventListener("click", ()=>{
+    equipSound();
     backgroundEl.style.backgroundImage="url('/gfx/donutBG.png')";
     backgroundEl.style.backgroundSize="15vw";
     backgroundEl.style.backgroundPosition= "center";
@@ -194,20 +272,24 @@ donutBgBtn.addEventListener("click", ()=>{
 })
 rainbowBtn.addEventListener("click", ()=> {
     if(donutMaker.rainbowBG == false){
+        purchaseSound()
         donutMaker.unlockRainbowBG();
         rainbowBtn.innerText="Taste the Rainbow!";
         rainbowBtn.disabled=false;
     } else{
+        equipSound();
         backgroundEl.style.backgroundImage="linear-gradient(to right, white, red, orange, yellow, green, blue, indigo, violet, white)";
         backgroundEl.style.backgroundSize="cover";
     }
 })
 shopBtn.addEventListener("click", ()=> {
     if(donutMaker.shopBG == false){
+        purchaseSound()
         donutMaker.unlockShopBG();
         shopBtn.innerText="Make Donuts at the Shop!";
         shopBtn.disabled=false;
     } else{
+        equipSound();
         backgroundEl.style.background="url('/gfx/donutshop1.png')";
         backgroundEl.style.backgroundSize="cover";
         backgroundEl.style.backgroundPosition= "center";
@@ -215,30 +297,36 @@ shopBtn.addEventListener("click", ()=> {
 })
 forestBtn.addEventListener("click", ()=> {
     if(donutMaker.forestBG == false){
+        purchaseSound()
         donutMaker.unlockForestBG();
         forestBtn.innerText="Explore the Woods...with Donuts!";
         forestBtn.disabled=false;
     } else{
+        equipSound();
         backgroundEl.style.background="url('/gfx/forestBG1.png')";
         backgroundEl.style.backgroundSize="cover";
     }
 })
 beachBtn.addEventListener("click", ()=> {
     if(donutMaker.beachBG == false){
+        purchaseSound()
         donutMaker.unlockBeachBG();
         beachBtn.innerText="Relax with Beach Donuts!";
         beachBtn.disabled=false;
     } else{
+        equipSound();
         backgroundEl.style.background="url('/gfx/beachBG.png')";
         backgroundEl.style.backgroundSize="cover";
     }
 })
 spaceBtn.addEventListener("click", ()=> {
     if(donutMaker.spaceBG == false){
+        purchaseSound()
         donutMaker.unlockSpaceBG();
-    spaceBtn.innerText="Make Donuts in Space!";
-    spaceBtn.disabled=false;
+        spaceBtn.innerText="Make Donuts in Space!";
+        spaceBtn.disabled=false;
     } else{
+        equipSound();
         backgroundEl.style.background="url('/gfx/spaceBG.png')";
         backgroundEl.style.backgroundSize="cover";
     }

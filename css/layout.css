@@ -96,7 +96,12 @@
 .cosmeticText{
     font-size: larger;
 }
-
+#mute-btn:hover{
+    transform: scale(1.1);
+}
+#mute-btn:active{
+    transform:scale(1);
+}
 #game-window{
     background-image: url(/gfx/donutBG.png);
     background-size: 15vw;
