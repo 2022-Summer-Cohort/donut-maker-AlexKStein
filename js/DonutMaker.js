@@ -1,115 +1,115 @@
-class DonutMaker{
-    constructor(){
+class DonutMaker {
+    constructor() {
         this.donutCount = 0;
         this.clickers = 1;
-        this.clickMultiplier=1;
-        this.autoClicks=0;
-        this.autoClickCost =50;
+        this.clickMultiplier = 1;
+        this.autoClicks = 0;
+        this.autoClickCost = 50;
         this.multiplierCost = 500;
         this.clickCost = 10;
     }
-   
-    get clickRate(){
+
+    get clickRate() {
         return this.clickers;
     }
-    get multiplier(){
+    get multiplier() {
         return this.clickMultiplier;
     }
     get totalDonuts() {
         return this.donutCount;
     }
-    set setDonuts(x){
+    set setDonuts(x) {
         this.donutCount = x;
     }
-    get autoClickers(){
+    get autoClickers() {
         return this.autoClicks;
     }
-    get mCost(){
+    get mCost() {
         return this.multiplierCost;
     }
-    get autoCost(){
+    get autoCost() {
         return this.autoClickCost;
     }
-    get upgradeClickCost(){
+    get upgradeClickCost() {
         return this.clickCost
     }
-    
-    addDonut(){
-        this.donutCount+= this.clickers*this.clickMultiplier;
+
+    addDonut() {
+        this.donutCount += this.clickers * this.clickMultiplier;
     }
-    addClicks(){
-        if(this.donutCount>=this.clickCost){
+    addClicks() {
+        if (this.donutCount >= this.clickCost) {
             this.clickers++;
-            this.donutCount -=this.clickCost;
-            this.clickCost*=1.5;
+            this.donutCount -= this.clickCost;
+            this.clickCost *= 1.5;
         }
     }
-    addAutoClicks(){
-        if (this.donutCount>=this.autoClickCost){
+    addAutoClicks() {
+        if (this.donutCount >= this.autoClickCost) {
             this.autoClicks++;
-            this.donutCount -=this.autoClickCost;
-            this.autoClickCost *=1.1;
+            this.donutCount -= this.autoClickCost;
+            this.autoClickCost *= 1.1;
         }
     }
-    activateAutoClicks(){
-        this.donutCount+=this.autoClicks*this.clickMultiplier;
+    activateAutoClicks() {
+        this.donutCount += this.autoClicks * this.clickMultiplier;
     }
-    addClickMultiplier(){
-        if(this.donutCount>=this.multiplierCost){ 
-            this.clickMultiplier+=1;
+    addClickMultiplier() {
+        if (this.donutCount >= this.multiplierCost) {
+            this.clickMultiplier += 1;
             this.donutCount -= this.multiplierCost;
             this.multiplierCost *= 2;
-        } 
+        }
     }
-    frodonut=new Boolean(false);
-    greenDonut=new Boolean(false);
-    blueDonut=new Boolean(false);
-    redDonut=new Boolean(false);
-    cosmicDonut=new Boolean(false);
-    unlockFrodonut(){
-        this.donutCount -=10;
-        this.frodonut=true;
+    frodonut = new Boolean(false);
+    greenDonut = new Boolean(false);
+    blueDonut = new Boolean(false);
+    redDonut = new Boolean(false);
+    cosmicDonut = new Boolean(false);
+    unlockFrodonut() {
+        this.donutCount -= 10;
+        this.frodonut = true;
     }
-    unlockGreenDonut(){
-        this.donutCount -=500;
-        this.greenDonut=true;
+    unlockGreenDonut() {
+        this.donutCount -= 500;
+        this.greenDonut = true;
     }
-    unlockBlueDonut(){
-        this.donutCount -=2500;
-        this.blueDonut=true;
+    unlockBlueDonut() {
+        this.donutCount -= 2500;
+        this.blueDonut = true;
     }
-    unlockRedDonut(){
-        this.donutCount -=10000;
-        this.redDonut=true;
+    unlockRedDonut() {
+        this.donutCount -= 10000;
+        this.redDonut = true;
     }
-    unlockCosmicDonut(){
-        this.donutCount -=100000;
-        this.cosmicDonut=true;
+    unlockCosmicDonut() {
+        this.donutCount -= 100000;
+        this.cosmicDonut = true;
     }
-    shopBG=new Boolean(false);
-    rainbowBG=new Boolean(false);
-    forestBG=new Boolean(false);
-    beachBG=new Boolean(false);
-    spaceBG=new Boolean(false);
-    unlockRainbowBG(){
-        this.donutCount-=25;
-        this.rainbowBG=true;
+    shopBG = new Boolean(false);
+    rainbowBG = new Boolean(false);
+    forestBG = new Boolean(false);
+    beachBG = new Boolean(false);
+    spaceBG = new Boolean(false);
+    unlockRainbowBG() {
+        this.donutCount -= 25;
+        this.rainbowBG = true;
     }
-    unlockShopBG(){
-        this.donutCount-=100;
-        this.shopBG=true;
+    unlockShopBG() {
+        this.donutCount -= 100;
+        this.shopBG = true;
     }
-    unlockForestBG(){
-        this.donutCount-=1000;
-        this.forestBG=true;
+    unlockForestBG() {
+        this.donutCount -= 1000;
+        this.forestBG = true;
     }
-    unlockBeachBG(){
-        this.donutCount-=10000;
-        this.beachBG=true;
+    unlockBeachBG() {
+        this.donutCount -= 10000;
+        this.beachBG = true;
     }
-    unlockSpaceBG(){
-        this.donutCount -=100000;
-        this.spaceBG=true;
+    unlockSpaceBG() {
+        this.donutCount -= 100000;
+        this.spaceBG = true;
     }
 
 }

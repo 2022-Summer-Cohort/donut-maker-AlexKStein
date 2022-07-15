@@ -1,66 +1,81 @@
-#donut-maker:hover{
+#donut-maker:hover {
     transform: scale(1.1);
 }
-#donut-maker:active{
-    transform:scale(1);
+
+#donut-maker:active {
+    transform: scale(1);
 }
-.header-donuts{
+
+.header-donuts {
     max-width: 40px;
     height: auto;
 }
-.container{
+
+.container {
     margin-top: 5px;
 }
-#click-tab{
+
+#click-tab {
     background-color: cyan;
     color: black;
 }
-#click-tab:hover{
+
+#click-tab:hover {
     box-shadow: 0 0 10px cyan;
 }
-#clicks{
+
+#clicks {
     background-color: rgb(175, 252, 252);
     border: 2px;
     border-color: cyan;
     border-style: solid;
     border-radius: 0 0 10px 10px;
 }
-#auto-tab{
+
+#auto-tab {
     background-color: magenta;
     color: black;
 }
-#auto-tab:hover{
+
+#auto-tab:hover {
     box-shadow: 0 0 10px magenta;
 }
-#autos{
+
+#autos {
     background-color: rgb(255, 155, 255);
     border: 2px;
     border-color: magenta;
     border-style: solid;
     border-radius: 0 0 10px 10px;
 }
-#multiply-tab{
+
+#multiply-tab {
     background-color: yellow;
     color: black;
 }
-#multiply-tab:hover{
+
+#multiply-tab:hover {
     box-shadow: 0 0 10px yellow;
 }
-#multiply{
+
+#multiply {
     background-color: rgb(255, 255, 158);
     border: 2px;
     border-color: yellow;
     border-style: solid;
     border-radius: 0 0 10px 10px;
 }
-#cosmetic-tab{
+
+#cosmetic-tab {
     background-color: black;
     color: white;
 }
-#cosmetic-tab:hover{
+
+#cosmetic-tab:hover {
     box-shadow: 0 0 10px black;
 }
-#cosmetic{
+
+#cosmetic {
     background-color: gray;
     color: white;
     border: 2px;
@@ -68,14 +83,17 @@
     border-style: solid;
     border-radius: 0 0 10px 10px;
 }
-#debug-tab{
+
+#debug-tab {
     background-image: linear-gradient(yellow, black, yellow);
     color: white;
 }
-#debug-tab:hover{
+
+#debug-tab:hover {
     box-shadow: 0 0 10px black;
 }
-#debug{
+
+#debug {
     background-color: white;
     color: darkgreen;
     border: 2px;
@@ -84,26 +102,33 @@
     border-radius: 0 0 10px 10px;
 }
 
-#click-rate{
+#click-rate {
     font-size: larger;
 }
-#auto-count{
+
+#auto-count {
     font-size: larger;
 }
-#multiplier-count{
+
+#multiplier-count {
     font-size: larger;
 }
-.cosmeticText{
+
+.cosmeticText {
     font-size: larger;
 }
-#mute-btn:hover{
+
+#mute-btn:hover {
     transform: scale(1.1);
 }
-#mute-btn:active{
-    transform:scale(1);
+
+#mute-btn:active {
+    transform: scale(1);
 }
-#game-window{
+
+#game-window {
     background-image: url(/gfx/donutBG.png);
     background-size: 15vw;
     background-position: center;
+    padding-bottom: 100px;
 }
